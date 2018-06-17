@@ -29,7 +29,7 @@
 		width: 300px;
 	}
 ```
- - 设置父元素container的位置，实在左右分别空出200px和300px区域；
+ - 设置父元素container的位置，并在左右分别空出200px和300px区域；
 ```
 	.container {
 		padding: 0 300px 0 200px;
@@ -65,9 +65,9 @@
 		width: 300px;
 	}
 ```
-> 负的margin-left会让元素沿文档流向左移动，如果数值较大就会移动至上一层。设置left的margin-left为-100%，就会使left向做移动一整行的宽度，由于左边是父级元素的边框，所以left会跳到上一行后在进行左移，一直移到上一行的开头。left移动后right就会移动到上一行的开头，这时候只要给right设置margin-left的负宽就会移动到末尾。
+> 负的margin-left会让元素沿文档流向左移动，如果数值较大就会移动至上一层。设置left的margin-left为-100%，就会使left向左移动一整行的宽度，由于左边是父级元素的边框，所以left会跳到上一行后再进行左移，一直移到上一行的开头。left移动后right就会移动到该行的开头，这时候只要给right设置margin-left的负宽就会移动到上一行的末尾。
 
- - 此时left和right依然是覆盖在main的主体上方，使用相对定位，将left和right分别移动到之前container预留的padding位置就可以了；
+ - 此时left和right依然是覆盖在main的主体上方，可使用相对定位，将left和right分别移动到之前container预留的padding位置就可以了；
 ```
 	.left,.main,.right {
 		position: relative;
